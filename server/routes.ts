@@ -1,23 +1,15 @@
-
-import express, { type Express } from "express";
+import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // API Routes
-  const apiRouter = express.Router();
-  
-  // User routes
-  apiRouter.get('/users/:id', async (req, res) => {
-    const user = await storage.getUser(parseInt(req.params.id));
-    if (!user) {
-      return res.status(404).json({ message: 'User not found' });
-    }
-    res.json(user);
-  });
+  // put application routes here
+  // prefix all routes with /api
 
-  // Mount API routes
-  app.use('/api', apiRouter);
+  // use storage to perform CRUD operations on the storage interface
+  // e.g. storage.insertUser(user) or storage.getUserByUsername(username)
 
-  return createServer(app);
+  const httpServer = createServer(app);
+
+  return httpServer;
 }
