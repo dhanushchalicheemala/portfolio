@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Brain, Sparkles } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 export function Hero() {
   return (
@@ -14,13 +14,43 @@ export function Hero() {
         }} />
       </div>
 
-      {/* Floating particles */}
+      {/* Neural Network Animation */}
+      <div className="absolute inset-0 z-0">
+        {[...Array(3)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{
+              scale: [0.8, 1, 0.8],
+              opacity: [0.3, 0.7, 0.3],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              delay: i * 1,
+              ease: "easeInOut",
+            }}
+            style={{
+              left: `${45 + i * 5}%`,
+              top: `${35 + i * 5}%`,
+              width: "50px",
+              height: "50px",
+              background: `radial-gradient(circle, rgba(147,51,234,0.3) 0%, rgba(147,51,234,0) 70%)`,
+              borderRadius: "50%",
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Floating data particles */}
       {[...Array(20)].map((_, i) => (
         <motion.div
-          key={i}
+          key={`particle-${i}`}
           className="absolute w-1 h-1 bg-primary/50 rounded-full"
           animate={{
             y: ["0%", "100%"],
+            x: ["-50%", "50%"],
             opacity: [0, 1, 0],
             scale: [0, 1, 0],
           }}
@@ -44,20 +74,88 @@ export function Hero() {
           className="max-w-3xl"
         >
           <div className="flex items-center gap-4 mb-6">
+            {/* Neural Network Node Animation */}
             <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="relative"
+              className="relative w-12 h-12"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
             >
-              <Brain className="h-12 w-12 text-primary" />
+              {/* Central Node */}
               <motion.div
-                className="absolute inset-0 text-primary"
-                animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.8, 0.5] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                <Sparkles className="h-12 w-12" />
-              </motion.div>
+                className="absolute inset-0 bg-primary rounded-full"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.7, 1, 0.7],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+
+              {/* Orbiting Nodes */}
+              {[...Array(3)].map((_, i) => (
+                <motion.div
+                  key={`node-${i}`}
+                  className="absolute w-2 h-2 bg-primary/80 rounded-full"
+                  animate={{
+                    rotate: 360,
+                    scale: [1, 1.2, 1],
+                  }}
+                  transition={{
+                    rotate: {
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "linear",
+                      delay: i * 0.5,
+                    },
+                    scale: {
+                      duration: 1,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: i * 0.3,
+                    },
+                  }}
+                  style={{
+                    left: "50%",
+                    top: "50%",
+                    transform: `rotate(${i * 120}deg) translateX(20px)`,
+                  }}
+                />
+              ))}
+
+              {/* Connecting Lines */}
+              {[...Array(3)].map((_, i) => (
+                <motion.div
+                  key={`line-${i}`}
+                  className="absolute left-1/2 top-1/2 w-[1px] h-[20px] bg-primary/30 origin-bottom"
+                  animate={{
+                    rotate: 360,
+                    opacity: [0.3, 0.6, 0.3],
+                  }}
+                  transition={{
+                    rotate: {
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "linear",
+                      delay: i * 0.5,
+                    },
+                    opacity: {
+                      duration: 1.5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: i * 0.3,
+                    },
+                  }}
+                  style={{
+                    transform: `rotate(${i * 120}deg)`,
+                  }}
+                />
+              ))}
             </motion.div>
+
             <h1 className="text-4xl md:text-6xl font-bold text-white">
               Hi, I'm{" "}
               <span className="bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent">
