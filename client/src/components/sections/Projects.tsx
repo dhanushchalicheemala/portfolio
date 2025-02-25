@@ -5,34 +5,34 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "Project Management App",
-    description: "A full-stack project management tool with real-time updates",
-    image: "https://images.unsplash.com/photo-1508873535684-277a3cbcc4e8",
-    tags: ["React", "Node.js", "PostgreSQL"],
+    title: "Sentiment Analysis Platform",
+    description: "Deep learning model for real-time sentiment analysis of social media data using BERT",
+    image: "https://images.unsplash.com/photo-1501159599894-155982264a55",
+    tags: ["Python", "PyTorch", "Transformers", "FastAPI"],
     github: "https://github.com",
     demo: "https://demo.com"
   },
   {
-    title: "E-commerce Platform",
-    description: "Modern e-commerce solution with payment integration",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
-    tags: ["Next.js", "Stripe", "Tailwind"],
+    title: "Computer Vision Object Detection",
+    description: "Real-time object detection system using YOLO and OpenCV for video streams",
+    image: "https://images.unsplash.com/photo-1633412802994-5c058f151b66",
+    tags: ["Python", "TensorFlow", "OpenCV", "YOLO"],
     github: "https://github.com",
     demo: "https://demo.com"
   },
   {
-    title: "AI Content Generator",
-    description: "Content generation tool powered by AI",
-    image: "https://images.unsplash.com/photo-1739514984003-330f7c1d2007",
-    tags: ["Python", "OpenAI", "Flask"],
+    title: "Predictive Analytics Dashboard",
+    description: "Machine learning powered dashboard for predictive maintenance in manufacturing",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+    tags: ["Scikit-learn", "Pandas", "Plotly", "Flask"],
     github: "https://github.com",
     demo: "https://demo.com"
   },
   {
-    title: "Social Media Dashboard",
-    description: "Analytics dashboard for social media metrics",
-    image: "https://images.unsplash.com/photo-1510759395231-72b17d622279",
-    tags: ["Vue.js", "D3.js", "Firebase"],
+    title: "AI-Powered Chatbot",
+    description: "Intelligent chatbot using GPT and custom fine-tuning for domain-specific responses",
+    image: "https://images.unsplash.com/photo-1676299081847-5c7fe8b15015",
+    tags: ["OpenAI", "LangChain", "Python", "FastAPI"],
     github: "https://github.com",
     demo: "https://demo.com"
   }
@@ -48,8 +48,8 @@ export function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
-          
+          <h2 className="text-3xl font-bold mb-8 text-center">AI/ML Projects</h2>
+
           <div className="grid md:grid-cols-2 gap-6">
             {projects.map((project, index) => (
               <motion.div
@@ -59,17 +59,17 @@ export function Projects() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="overflow-hidden">
+                <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 bg-black/50 backdrop-blur-sm border-primary/20">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-48 object-cover"
+                    className="w-full h-48 object-cover opacity-80 hover:opacity-100 transition-opacity"
                   />
                   <CardHeader>
-                    <CardTitle>{project.title}</CardTitle>
+                    <CardTitle className="text-gradient">{project.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground mb-4">{project.description}</p>
+                    <p className="text-gray-300 mb-4">{project.description}</p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.map((tag) => (
                         <span
@@ -81,13 +81,13 @@ export function Projects() {
                       ))}
                     </div>
                     <div className="flex gap-4">
-                      <Button variant="outline" size="sm" asChild>
+                      <Button variant="outline" size="sm" className="border-primary/50 hover:border-primary" asChild>
                         <a href={project.github} target="_blank" rel="noopener noreferrer">
                           <Github className="h-4 w-4 mr-2" />
                           Code
                         </a>
                       </Button>
-                      <Button size="sm" asChild>
+                      <Button size="sm" className="bg-primary/80 hover:bg-primary" asChild>
                         <a href={project.demo} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="h-4 w-4 mr-2" />
                           Demo
