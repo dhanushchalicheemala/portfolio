@@ -1,11 +1,11 @@
 
-import type { Express } from "express";
+import express, { type Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // API Routes
-  const apiRouter = app.Router();
+  const apiRouter = express.Router();
   
   // User routes
   apiRouter.get('/users/:id', async (req, res) => {
