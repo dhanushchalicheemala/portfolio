@@ -1,8 +1,22 @@
 # Personal Portfolio Website
 
-A modern, responsive personal portfolio website showcasing skills, projects, research, and professional experience. Built with React, TypeScript, and Tailwind CSS.
+A modern, responsive personal portfolio website showcasing skills, projects, research, and professional experience. Built with React, TypeScript, and Tailwind CSS for a sleek, animated user experience.
 
-![Portfolio Preview](client/public/portfolio-preview.png)
+![Portfolio Screenshot](docs/images/portfolio-screenshot.png)
+
+## 📋 About This Portfolio
+
+This portfolio website serves as a comprehensive digital resume and project showcase for Dhanush Chalicheemala, an AI Engineer and Data Scientist. The site features a modern, dark-themed design with animated elements that create an engaging user experience.
+
+### Key Highlights:
+
+- **Interactive UI**: Animated elements powered by Framer Motion create dynamic visual effects including neural network nodes, floating particles, and smooth transitions between sections
+- **AI/ML Focus**: Showcases specialized skills in Computer Vision, NLP, and Machine Learning with detailed project descriptions
+- **Research Publications**: Presents academic research papers complete with publication details, impact factors, and DOI links
+- **Professional Experience**: Timeline of work history highlighting key achievements and responsibilities
+- **Skills Visualization**: Visual representation of technical proficiency across programming languages, frameworks, and tools
+
+The site is built using modern web technologies focusing on performance and responsive design, ensuring a smooth experience across all devices from mobile to desktop.
 
 ## 🚀 Features
 
