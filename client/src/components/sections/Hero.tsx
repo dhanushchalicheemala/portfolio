@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Download, Github, Linkedin, Mail } from "lucide-react";
 
 export function Hero() {
   return (
@@ -163,19 +163,58 @@ export function Hero() {
               </span>
             </h1>
           </div>
+          
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="mb-3"
+          >
+            <h2 className="text-2xl md:text-3xl text-primary/90 font-semibold">
+              AI Engineer & Data Scientist
+            </h2>
+          </motion.div>
+          
           <motion.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="text-xl md:text-2xl text-gray-300 mb-8"
+            className="text-lg md:text-xl text-gray-300 mb-6"
           >
-            A passionate Data Science student exploring the frontiers of AI/ML to solve real-world problems
+            Specializing in Computer Vision, NLP, and Machine Learning solutions with a proven track record of building impactful AI systems that solve complex real-world problems.
           </motion.p>
+          
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="text-gray-400 mb-8 flex flex-wrap gap-x-6 gap-y-2 items-center text-sm md:text-base"
+          >
+            <div className="flex items-center">
+              <Mail className="h-4 w-4 mr-2 text-primary" />
+              <a href="mailto:chalicheemala.dhanush@gmail.com" className="hover:text-primary transition-colors">
+                chalicheemala.dhanush@gmail.com
+              </a>
+            </div>
+            <div className="flex items-center">
+              <Github className="h-4 w-4 mr-2 text-primary" />
+              <a href="https://github.com/dhanushchalicheemala" className="hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+                github.com/dhanushchalicheemala
+              </a>
+            </div>
+            <div className="flex items-center">
+              <Linkedin className="h-4 w-4 mr-2 text-primary" />
+              <a href="https://www.linkedin.com/in/dhanush-chalicheemala/" className="hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+                linkedin.com/in/dhanush-chalicheemala
+              </a>
+            </div>
+          </motion.div>
+          
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="flex gap-4"
+            className="flex flex-wrap gap-4"
           >
             <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
               <a href="#projects">View Projects</a>
@@ -183,6 +222,32 @@ export function Hero() {
             <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10" asChild>
               <a href="#contact">Get in Touch</a>
             </Button>
+            <Button size="lg" variant="ghost" className="text-white hover:text-primary hover:bg-transparent" asChild>
+              <a href="/Dhanush resume.pdf" download>
+                <Download className="h-4 w-4 mr-2" />
+                Download Resume
+              </a>
+            </Button>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+            className="mt-10 flex flex-wrap gap-3"
+          >
+            <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm backdrop-blur-sm">
+              #ArtificialIntelligence
+            </span>
+            <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm backdrop-blur-sm">
+              #MachineLearning
+            </span>
+            <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm backdrop-blur-sm">
+              #ComputerVision
+            </span>
+            <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm backdrop-blur-sm">
+              #NLP
+            </span>
           </motion.div>
         </motion.div>
       </div>
