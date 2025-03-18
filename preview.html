@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Preview</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #0070f3;
+            margin-top: 40px;
+        }
+        h2 {
+            color: #0070f3;
+            margin-top: 30px;
+        }
+        code {
+            background-color: #f1f1f1;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .card {
+            border: 1px solid #eaeaea;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+        }
+        .steps {
+            margin-left: 20px;
+        }
+        .steps li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Portfolio Website Preview</h1>
+    
+    <div class="card">
+        <h2>How to Run Your Portfolio Website</h2>
+        <p>Your portfolio website is built with modern web technologies including:</p>
+        <ul>
+            <li>React for the frontend</li>
+            <li>Vite as the build tool</li>
+            <li>TypeScript for type safety</li>
+            <li>Express.js for the backend</li>
+            <li>Tailwind CSS for styling</li>
+        </ul>
+        
+        <h2>Setup Instructions</h2>
+        <ol class="steps">
+            <li>Install Node.js (which includes npm) from <a href="https://nodejs.org/en/download/" target="_blank">nodejs.org</a></li>
+            <li>Open a terminal/command prompt in your project folder</li>
+            <li>Run <code>npm install</code> to install all dependencies</li>
+            <li>Run <code>npm run dev</code> to start the development server</li>
+            <li>Open your browser and navigate to <code>http://localhost:5000</code> (or the port shown in the terminal)</li>
+        </ol>
+        
+        <h2>Project Structure</h2>
+        <p>Your portfolio website includes the following key sections:</p>
+        <ul>
+            <li><strong>Hero</strong> - Introduction and main banner</li>
+            <li><strong>About</strong> - Information about you</li>
+            <li><strong>Skills</strong> - Your technical and professional skills</li>
+            <li><strong>Projects</strong> - Showcase of your work</li>
+            <li><strong>Research</strong> - Your research papers and academic work</li>
+        </ul>
+    </div>
+    
+    <div class="card">
+        <h2>Alternative Preview Method</h2>
+        <p>Since Node.js isn't properly set up, you can view a simple preview using Python's built-in HTTP server:</p>
+        <ol class="steps">
+            <li>Open a terminal/command prompt in your project folder</li>
+            <li>Run: <code>python -m http.server 8000</code></li>
+            <li>Open your browser and navigate to <code>http://localhost:8000/preview.html</code></li>
+            <li>Note: This will only show this page, not your actual portfolio</li>
+        </ol>
+    </div>
+</body>
+</html> 
